@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 
 const userRouter = require("./routes/userRoutes/index");
+const postRouter = require("./routes/postRoutes/index");
 
 //Set up default mongoose connection
 const mongoDB = "mongodb://127.0.0.1/newsapp";
@@ -34,3 +35,4 @@ app.get("/", (req, res) => {
 app.use(bodyParser.json());
 
 app.use("/users", userRouter);
+app.use("/posts", postRouter);
